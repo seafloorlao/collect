@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>点点麦芽</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="../static/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="../static/css/style.css">
+<link rel="stylesheet" type="text/css" href="../static/css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="../static/css/nivo-lightbox/default.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<!--<script type="text/javascript" src="../static/js/modernizr.custom.js"></script>-->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Header -->
+<header id="header">
+  <div class="intro" id="intro">
+    <div class="container">
+      <div class="row">
+        <div class="intro-text" >
+          <input type="hidden" id="picType"
+                 th:value="${#httpServletRequest.getParameter('type')}"/>
+        </div>
+      </div>
+    </div>
+    </div>
+</header>
+
+<div id="contact" class="text-center">
+  <div class="container">
+    <div class="section-title center">
+      <h2>联系信息</h2>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <form name="sentMessage" id="contactForm" >
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="brand" name="brand" class="form-control" placeholder="品牌名称" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="username" name="username" class="form-control" placeholder="姓名" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="phone" id="phone" name="phone" class="form-control" placeholder="手机号" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="weChat" name="weChat" class="form-control" placeholder="微信号" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div id="success"></div>
+        <button type="submit" name=”query” onclick="checkForm()" class="btn btn-default btn-lg">提交</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="container text-center">
+    <div class="fnav">
+      <p>Copyright &copy; 2019 Magnum <a href="" target="_blank" title="点点麦芽">点点麦芽</a> - Collect from <a href="" title="点点麦芽" target="_blank">点点麦芽</a></p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="./static/js/jquery.1.11.1.js"></script>
+<script type="text/javascript" src="./static/js/bootstrap.js"></script>
+<script type="text/javascript" src="./static/js/SmoothScroll.js"></script>
+<script type="text/javascript" src="./static/js/nivo-lightbox.js"></script>
+<script type="text/javascript" src="./static/js/jquery.isotope.js"></script>
+<script type="text/javascript" src="./static/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="./static/js/contact_me.js"></script>
+<script type="text/javascript" src="./static/js/main.js"></script>
+
+<script type="text/javascript">
+  $(function() {
+   var type =  document.getElementById('picType').value;
+    var fbox = document.getElementById("intro");
+    if(type==1){
+      fbox.style.backgroundImage = "url('../static/img/intro-bg_sj.jpeg')";
+    }else if(type ==2){
+      fbox.style.backgroundImage = "url('../static/img/intro-bg_kf.jpeg')";
+    }else{
+      fbox.style.backgroundImage = "url('../static/img/intro-bg_sj.jpeg')";
+    }
+  });
+</script>
+</body>
+</html>
